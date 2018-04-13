@@ -119,8 +119,8 @@ int readXmlFile()
 
 int main(int argc, char *argv[])
 {
-	
 	writeXmlFile();
+	
 	printf("\nafter write\n");
 	
 	readXmlFile();
