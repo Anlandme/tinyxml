@@ -2,38 +2,38 @@
 #include "tinyxml.h"
 #include <iostream>
 #include <cstring>
-
+dfd
 using namespace std;
 
 /*
-	TiXmlDocument£ºÎÄµµÀà£¬Ëü´ú±íÁËÕû¸öxmlÎÄ¼ş
-	TiXmlDeclaration£ºÉùÃ÷Àà£¬Ëü±íÊ¾ÎÄ¼şµÄÉùÃ÷²¿·Ö
-	TiXmlComment£º×¢ÊÍÀà£¬Ëü±íÊ¾ÎÄ¼şµÄ×¢ÊÍ²¿·Ö
-	TiXmlElement£ºÔªËØÀà£¬ËüÊÇÎÄ¼şµÄÖ÷Òª²¿·Ö£¬²¢ÇÒÖ§³ÖÇ¶Ì×½á¹¹£¬Ò»°ãÊ¹ÓÃÕâÖÖ½á¹¹À´·ÖÀàµÄ´æ´¢ĞÅÏ¢£¬Ëü¿ÉÒÔ°üº¬ÊôĞÔÀàºÍÎÄ±¾Àà
-	TiXmlAttribute/TiXmlAttributeSet£ºÔªËØÊôĞÔ£¬ËüÒ»°ãÇ¶Ì×ÔÚÔªËØÖĞ£¬ÓÃÓÚ¼ÇÂ¼´ËÔªËØµÄÒ»Ğ©ÊôĞÔ
-	TiXmlText£ºÎÄ±¾¶ÔÏó£¬ËüÇ¶Ì×ÔÚÄ³¸öÔªËØÄÚ²¿
+	TiXmlDocumentï¼šæ–‡æ¡£ç±»ï¼Œå®ƒä»£è¡¨äº†æ•´ä¸ªxmlæ–‡ä»¶
+	TiXmlDeclarationï¼šå£°æ˜ç±»ï¼Œå®ƒè¡¨ç¤ºæ–‡ä»¶çš„å£°æ˜éƒ¨åˆ†
+	TiXmlCommentï¼šæ³¨é‡Šç±»ï¼Œå®ƒè¡¨ç¤ºæ–‡ä»¶çš„æ³¨é‡Šéƒ¨åˆ†
+	TiXmlElementï¼šå…ƒç´ ç±»ï¼Œå®ƒæ˜¯æ–‡ä»¶çš„ä¸»è¦éƒ¨åˆ†ï¼Œå¹¶ä¸”æ”¯æŒåµŒå¥—ç»“æ„ï¼Œä¸€èˆ¬ä½¿ç”¨è¿™ç§ç»“æ„æ¥åˆ†ç±»çš„å­˜å‚¨ä¿¡æ¯ï¼Œå®ƒå¯ä»¥åŒ…å«å±æ€§ç±»å’Œæ–‡æœ¬ç±»
+	TiXmlAttribute/TiXmlAttributeSetï¼šå…ƒç´ å±æ€§ï¼Œå®ƒä¸€èˆ¬åµŒå¥—åœ¨å…ƒç´ ä¸­ï¼Œç”¨äºè®°å½•æ­¤å…ƒç´ çš„ä¸€äº›å±æ€§
+	TiXmlTextï¼šæ–‡æœ¬å¯¹è±¡ï¼Œå®ƒåµŒå¥—åœ¨æŸä¸ªå…ƒç´ å†…éƒ¨
 */
-//´´½¨xmlÎÄ¼ş
+//åˆ›å»ºxmlæ–‡ä»¶
 
 int writeXmlFile()
 {
-	TiXmlDocument *writeDoc = new TiXmlDocument; //xmlÎÄµµÖ¸Õë
+	TiXmlDocument *writeDoc = new TiXmlDocument; //xmlæ–‡æ¡£æŒ‡é’ˆ
 	
-	//ÎÄµµ¸ñÊ½ÉùÃ÷
+	//æ–‡æ¡£æ ¼å¼å£°æ˜
 	TiXmlDeclaration *decl = new TiXmlDeclaration("1.0", "UTF-8", "yes");
-	writeDoc->LinkEndChild(decl); //Ğ´ÈëÎÄµµ
+	writeDoc->LinkEndChild(decl); //å†™å…¥æ–‡æ¡£
 
-	int n = 3;	//¸¸½Úµã¸öÊı
+	int n = 3;	//çˆ¶èŠ‚ç‚¹ä¸ªæ•°
 
-	TiXmlElement *RootElement = new TiXmlElement("Info");//¸ùÔªËØ
-	RootElement->SetAttribute("num", n); //ÊôĞÔ
+	TiXmlElement *RootElement = new TiXmlElement("Info");//æ ¹å…ƒç´ 
+	RootElement->SetAttribute("num", n); //å±æ€§
 	writeDoc->LinkEndChild(RootElement);
 	
-	for(int i=0; i<n; i++)//n¸ö¸¸½Úµã
+	for(int i=0; i<n; i++)//nä¸ªçˆ¶èŠ‚ç‚¹
 	{
 		TiXmlElement *StuElement = new TiXmlElement("Stu");//Stu
 		
-		//ÉèÖÃÊôĞÔ
+		//è®¾ç½®å±æ€§
 		StuElement->SetAttribute("class","A");
 		if(2 == i)
 		{
@@ -42,23 +42,23 @@ int writeXmlFile()
 		
 		StuElement->SetAttribute("id",i+1);
 		StuElement->SetAttribute("flag", (i+1)*10);
-		RootElement->LinkEndChild(StuElement);//¸¸½ÚµãĞ´ÈëÎÄµµ
+		RootElement->LinkEndChild(StuElement);//çˆ¶èŠ‚ç‚¹å†™å…¥æ–‡æ¡£
 	
-		//ĞÕÃû
+		//å§“å
 		TiXmlElement *nameElement = new TiXmlElement("name");
 		StuElement->LinkEndChild(nameElement);
 
 		TiXmlText *nameContent = new TiXmlText("mike");
 		nameElement->LinkEndChild(nameContent);
 		
-		//·ÖÊı
+		//åˆ†æ•°
 		TiXmlElement *scoreElement = new TiXmlElement("score");
 		StuElement->LinkEndChild(scoreElement);
 
 		TiXmlText *scoreContent = new TiXmlText("88");
 		scoreElement->LinkEndChild(scoreContent);
 		
-		//³ÇÊĞ
+		//åŸå¸‚
 		TiXmlElement *cityElement = new TiXmlElement("city");
 		StuElement->LinkEndChild(cityElement);
 
@@ -73,39 +73,39 @@ int writeXmlFile()
 	return 1;
 }
 
-//½âÎöxmlÎÄ¼ş
+//è§£æxmlæ–‡ä»¶
 int readXmlFile()
 {
-	TiXmlDocument mydoc("stu_info.xml");//xmlÎÄµµ¶ÔÏó
-	bool loadOk=mydoc.LoadFile();//¼ÓÔØÎÄµµ
+	TiXmlDocument mydoc("stu_info.xml");//xmlæ–‡æ¡£å¯¹è±¡
+	bool loadOk=mydoc.LoadFile();//åŠ è½½æ–‡æ¡£
 	if(!loadOk)
 	{
 		cout<<"could not load the test file.Error:"<<mydoc.ErrorDesc()<<endl;
 		exit(1);
 	}
 
-	TiXmlElement *RootElement=mydoc.RootElement();	//¸ùÔªËØ, Info
+	TiXmlElement *RootElement=mydoc.RootElement();	//æ ¹å…ƒç´ , Info
 	cout<< "[root name]" << RootElement->Value() <<"\n";
 	
 	TiXmlElement *pEle=RootElement;
 
-	//±éÀú¸Ã½áµã
-	for(TiXmlElement *StuElement = pEle->FirstChildElement();//µÚÒ»¸ö×ÓÔªËØ
+	//éå†è¯¥ç»“ç‚¹
+	for(TiXmlElement *StuElement = pEle->FirstChildElement();//ç¬¬ä¸€ä¸ªå­å…ƒç´ 
 		StuElement != NULL;
-		StuElement = StuElement->NextSiblingElement())//ÏÂÒ»¸öĞÖµÜÔªËØ
+		StuElement = StuElement->NextSiblingElement())//ä¸‹ä¸€ä¸ªå…„å¼Ÿå…ƒç´ 
 	{
-		// StuElement->Value() ½ÚµãÃû³Æ
+		// StuElement->Value() èŠ‚ç‚¹åç§°
 		cout<< StuElement->Value() <<" ";
-		TiXmlAttribute *pAttr=StuElement->FirstAttribute();//µÚÒ»¸öÊôĞÔ
+		TiXmlAttribute *pAttr=StuElement->FirstAttribute();//ç¬¬ä¸€ä¸ªå±æ€§
 		
-		while( NULL != pAttr) //Êä³öËùÓĞÊôĞÔ
+		while( NULL != pAttr) //è¾“å‡ºæ‰€æœ‰å±æ€§
 		{
 			cout<<pAttr->Name()<<":"<<pAttr->Value()<<" ";
 			pAttr=pAttr->Next();
 		}
 		cout<<endl;
 		
-		//Êä³ö×ÓÔªËØµÄÖµ
+		//è¾“å‡ºå­å…ƒç´ çš„å€¼
 		for(TiXmlElement *sonElement=StuElement->FirstChildElement();
 		sonElement;
 		sonElement=sonElement->NextSiblingElement())
