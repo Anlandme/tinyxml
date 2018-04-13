@@ -2,7 +2,6 @@
 #include "tinyxml.h"
 #include <iostream>
 #include <cstring>
-dfd
 using namespace std;
 
 /*
