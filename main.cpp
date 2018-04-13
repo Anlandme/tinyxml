@@ -4,6 +4,8 @@
 #include <cstring>
 using namespace std;
 
+hekl
+
 /*
 	TiXmlDocument：文档类，它代表了整个xml文件
 	TiXmlDeclaration：声明类，它表示文件的声明部分
