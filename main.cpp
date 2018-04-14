@@ -14,12 +14,6 @@ using namespace std;
 */
 //创建xml文件
 
-int fun(void)
-{
-		int *p,q;
-
-		return ;
-}
 int writeXmlFile()
 {
 	TiXmlDocument *writeDoc = new TiXmlDocument; //xml文档指针
