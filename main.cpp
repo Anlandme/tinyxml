@@ -18,9 +18,6 @@ int fun(void)
 {
 		int *p,q;
 
-		q = (int *)malloc(4);
-		free(p);
-
 		return ;
 }
 int writeXmlFile()
