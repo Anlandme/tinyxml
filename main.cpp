@@ -21,10 +21,6 @@ int fun(void)
 		q = (int *)malloc(4);
 		free(p);
 
-		int a[4];
-
-		a[5] = 7;
-
 		return ;
 }
 int writeXmlFile()
